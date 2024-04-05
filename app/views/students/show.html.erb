@@ -1,0 +1,17 @@
+<p>
+  <strong>Nombre:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @student.status %>
+</p>
+
+<%= link_to 'Editar', edit_school_group_student_path(@school.id, @group.id, @student.id) %> |
+<%= link_to "Regresar a clase #{@group.name}", controller: "groups", action: "show", id: @group %>

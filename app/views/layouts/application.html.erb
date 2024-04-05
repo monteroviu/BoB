@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bob</title>
+    <link href='http://fonts.googleapis.com/CSS?family=Open+Sans:400,700,300' rel='stylesheet' type='text/CSS'>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+     <%= render "partials/navigation" %>
+     <div class="container">
+       <% if notice -%>
+         <div class="alert alert-danger"><%= notice %></div>
+        <% end -%>
+        <%= yield %>
+
+     </div>
+  </body>
+</html>

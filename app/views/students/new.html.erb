@@ -1,0 +1,9 @@
+<strong>Colegio: </strong> <%= @group.school.name %></> <br>
+<strong>Nombre de la clase:</strong> <%= @group.name %>
+<br>
+<br>
+<p>Añadir un estudiante</p>
+
+<%= render 'form', student: @student %>
+<br>
+<%= link_to "Regresar a clase #{@group.name}", controller: "groups", action: "show", id: @group   %>

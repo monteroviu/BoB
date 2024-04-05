@@ -1,0 +1,26 @@
+<%= form_with(model: [@school, group], local: true) do |form| %>
+  <% if group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, "Nombre de la clase" %>
+    <%= form.text_field :name, class:"form-control"   %>
+  </div>
+<br>
+
+
+<br>
+<br>
+  <div class="actions">
+    <%= form.submit "Guardar" %>
+  </div>
+<% end %>

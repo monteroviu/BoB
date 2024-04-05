@@ -1,0 +1,34 @@
+
+
+<h1>Students</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
+
+      <th>Group</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.email %></td>
+        <td><%= student.status %></td>
+        <td><%= student.group %></td>
+        <td><%= link_to 'Ver detalles', school_group_student_path(@group.id,@student.id) %></td>
+        <td><%= link_to 'Editar', edit_school_group_student(@group.id,@student.id) %></td>
+        <td><%= link_to 'Borrar', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student',  new_school_group_student %>

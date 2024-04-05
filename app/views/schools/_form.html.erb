@@ -1,0 +1,32 @@
+<%= form_with(model: school, local: true) do |form| %>
+  <% if school.errors.any? %>
+    <div id="error_explanation">
+      <h5><%= pluralize(school.errors.count, "error") %> No se ha guardado la escuela:</h5>
+
+      <ul>
+      <% school.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="container">
+      <div>
+          <%= form.label :name, "Nombre de la escuela" %>
+          <%= form.text_field :name, class:"form-control" %>
+
+          <!%= form.label :number_of_diagnoses, "Número de diagnósticos" %>
+          <!%= form.number_field :number_of_diagnoses, class:"form-control" %>
+
+          <!%= form.label :generated, "informes generados"%>
+          <!%= form.number_field :generated, class:"form-control" %>
+          <br>
+          <div >
+            <%= form.submit "Guardar" %>
+          </div>
+      </div>
+    </div>
+  </div>
+<% end %>

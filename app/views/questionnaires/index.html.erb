@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Questionnaires</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Regards</th>
+      <th>Thanks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questionnaires.each do |questionnaire| %>
+      <tr>
+        <td><%= questionnaire.code %></td>
+        <td><%= questionnaire.name %></td>
+        <td><%= questionnaire.description %></td>
+        <td><%= questionnaire.regards %></td>
+        <td><%= questionnaire.thanks %></td>
+        <td><%= link_to 'Show', questionnaire %></td>
+        <td><%= link_to 'Edit', edit_questionnaire_path(questionnaire) %></td>
+        <td><%= link_to 'Destroy', questionnaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Questionnaire', new_questionnaire_path %>

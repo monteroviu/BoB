@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+
+   <p> <%= "A nombre del colegio #{@school.name} enviamos este correo a #{@student.email} del curso #{@group.name}." %> </p>
+   <p> Por favor, rellena el cuestionario B0B que encontrarás en el enlace:" </p>
+  <p> <%= link_to "#{@invitation.token}", questionnaire_url(@invitation.questionnaire.id) %></p>
+
+
+  </body>
+</html>

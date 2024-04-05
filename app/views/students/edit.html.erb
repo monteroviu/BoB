@@ -1,0 +1,9 @@
+<h5><strong>Editar estudiante</strong></h5>
+<br>
+<%= render 'form', student: @student %>
+<br>
+
+<%= link_to 'Ver detalles',  [@school, @group, @student] %> |
+<%= link_to "Regresar a clase #{@group.name}", controller: "groups", action: "show", id: @group %>
+
+<!%= link_to 'Back', :back%>

@@ -1,0 +1,6 @@
+<h1>Editar clase</h1>
+
+<%= render 'form', group: @group, school: @school %>
+<br>
+<%= link_to 'Ver detalles', [@school, @group] %> |
+<%= link_to 'Regresar', controller: "schools", action: "show", id: @school   %>

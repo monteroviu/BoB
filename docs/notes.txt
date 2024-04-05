@@ -1,0 +1,11 @@
+<%= form_for([:admin, @user, @fakelist], html: {class: "form-inline"}) do |form| %>
+   <div class="form-group">
+     <%= form.file_field :attachment, direct_upload: true, class: 'btn btn-deafult' %>
+     <button type="submit" class="btn btn-outline-secondary"><i class="fa fa-upload fa-fw" aria-hidden="true"></i>&nbsp;<%= t('upload_xlsx_file') %></button>
+   </div>
+   &nbsp;&nbsp;<small> (<%= t('fakelist_sample_file_in_xlsx_format') %>: <%= link_to 'bridge_users_list_sample.xlsx', "/bridge_users_list_sample.xlsx" %>)</small>
+ <% end %>
+ <% if @fakelist.attachment.attached? %>
+   <small><%= t('uploaded_xlsx_file') %>: <%= @fakelist.attachment.filename %></small>
+ <% end %>
+ 

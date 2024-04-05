@@ -1,0 +1,25 @@
+<div id="header" class="without-secondary-menu">
+  <div class="section clearfix text-center">
+    <div >
+      <%= image_tag("/bob_logo.jpg", :alt => "rss feed") %>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="col-xs-25">
+
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-xs-25", placeholder: "Usuario" %>
+      </div>
+
+      <div class="col-xs-25">
+
+        <%= f.password_field :password, autocomplete: "password", class: "col-xs-25", placeholder: "Contraseña" %>
+      </div>
+      <br>
+      <div class="actions">
+        <%= f.submit "Ingresar",class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

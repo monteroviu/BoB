@@ -1,0 +1,27 @@
+<h1>Groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Clase</th>
+      <th>Escuela</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.name %></td>
+        <td ><%= group.school.name %></td>
+        <td><%= link_to 'Show', school_group_student_path(group.school, group) %></td>
+        <td><%= link_to 'Edit', edit_school_group_path(group.school,group) %></td>
+        <td><%= link_to 'Destroy', school_group_path(group.school, group), method: :delete, class:"red", data: { confirm: "¿Estás seguro de que quieres borrar la clase #{group.school.name}?"  } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva clase', new_school_group_path(@school) %>
