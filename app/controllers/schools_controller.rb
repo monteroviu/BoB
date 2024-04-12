@@ -15,7 +15,8 @@ class SchoolsController < ApplicationController
   def new
     @school =current_user.schools.new
   end
-
+def no inicua
+end
   # GET /schools/1/edit
   def edit
   end
